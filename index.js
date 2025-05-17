@@ -29,8 +29,11 @@ const Admin = mongoose.model('Admin', new mongoose.Schema({
 }));
 
 // === Routes ===
-
+app.get('/', (req, res) => {
+    res.json({message: 'Welcome to the Election API'});
+    })
 // Admin Signup
+
 app.post('/admin/signup', async (req, res) => {
   try {
     const { username, fullName, password } = req.body;
